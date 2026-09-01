@@ -48,7 +48,6 @@ export const testInvariantCompanions: Readonly<Record<string, () => Promise<Test
 /** Manual-topology suites whose names cannot follow the focused invariant convention. */
 const MANUAL_INVARIANT_TEST_EXCEPTIONS = [
   '/packages/runtime-diagnostics/invariants/tests/service.spec.ts',
-  '/packages/examples/agent-spine-demo/tests/agent-core.spec.ts',
 ] as const
 
 interface InvariantHost {
@@ -117,6 +116,7 @@ class TestAttachmentStore extends AttachmentStore {
     maxImagesPerMessage: 1,
     maxMessageImageBytes: 1,
     maxImagePixels: 1,
+    maxImageDimension: 1,
     mediaTypes: ['image/png'],
   }
 
